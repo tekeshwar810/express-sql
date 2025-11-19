@@ -1,0 +1,358 @@
+{
+	"info": {
+		"_postman_id": "660b6f16-b745-418a-9753-ef2674e69857",
+		"name": "Creative-ai",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30523700"
+	},
+	"item": [
+		{
+			"name": "authentication",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Andrew\",\r\n    \"username\":\"Andrew-anderson\",\r\n    \"email\":\"andrew@gmail.com\",\r\n    \"password\":\"Test@123\",\r\n    \"mobile\":\"4589748888\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"andrew@gmail.com\",\r\n    \"password\":\"Test@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzYzMTE3MTkzLCJleHAiOjE3NjMxMjQzOTN9.v03EOJ84Z443zKQBkRpirqrXOHEa-YqQAIogq8nEWn8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzYzMTE3MTkzLCJleHAiOjE3NjMxMjQzOTN9.v03EOJ84Z443zKQBkRpirqrXOHEa-YqQAIogq8nEWn8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"andrewss\",\r\n    \"username\":\"andys\",\r\n    \"password\":\"Test@1234\",\r\n    \"mobile\":\"897898888\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Media",
+			"item": [
+				{
+					"name": "Uplode file",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzYzMTI1MTk2LCJleHAiOjE3NjMxMzIzOTZ9.gkxRFLqvLU3vgCclANOy5LLMzDqLmmDEkDI5InMLlPw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/HP/Downloads/Aarti Makwana Resume (1).pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/companey/1/upload-file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"companey",
+								"1",
+								"upload-file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Image uplode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzYzMTI1MTk2LCJleHAiOjE3NjMxMzIzOTZ9.gkxRFLqvLU3vgCclANOy5LLMzDqLmmDEkDI5InMLlPw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/HP/Pictures/Saved Pictures/images.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/companey/1/upload-images",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"companey",
+								"1",
+								"upload-images"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Companey",
+			"item": [
+				{
+					"name": "Add companey",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzYyODc3ODg3LCJleHAiOjE3NjI4ODUwODd9.JGvA-F7F-glQyNL6RhaILnMA53yC7fXfIcaaVzdRppU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzYzMTI1MTk2LCJleHAiOjE3NjMxMzIzOTZ9.gkxRFLqvLU3vgCclANOy5LLMzDqLmmDEkDI5InMLlPw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companeyName\":\"Creative AI\",\r\n    \"companeyDoc\":\"/1763122294885-Aarti Makwana Resume (1).pdf\",\r\n    \"companeyEmail\":\"creative@gmail.com\",\r\n    \"companeyAddress\":\"Indore india\",\r\n    \"companeyPhone\":\"8789589878\",\r\n    \"companeyUsers\":[\r\n        {\r\n            \"firstName\":\"demo1\",\r\n            \"lastName\":\"demo lastname\",\r\n            \"email\":\"this@gmail.com\",\r\n            \"address\":\"Indore india\",\r\n            \"image\":\"/1763125712702-images.jpg\"\r\n        },\r\n          {\r\n            \"firstName\":\"demo2\",\r\n            \"lastName\":\"demo2 lastname\",\r\n            \"email\":\"this@gmail.com\",\r\n            \"address\":\"Indore india\",\r\n             \"image\":\"/1763125712702-images.jpg\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/companey",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"companey"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update companey",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzYzMTE3NzgxLCJleHAiOjE3NjMxMjQ5ODF9.KO1sdERdC9h3Yf2lrvEU-FMcwe7RlYnqFzICfcl-mf4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companeyName\":\"Creative AI\",\r\n    \"companeyDoc\":\"/1763122294885-Aarti Makwana Resume (1).pdf\",\r\n    \"companeyEmail\":\"creative@gmail.com\",\r\n    \"companeyAddress\":\"Indore india\",\r\n    \"companeyPhone\":\"8789589878\",\r\n    \"companeyUsers\":[\r\n        {\r\n            \"firstName\":\"demo1\",\r\n            \"lastName\":\"demo lastname\",\r\n            \"email\":\"this@gmail.com\",\r\n            \"address\":\"Indore india\",\r\n            \"image\":\"/1763125712702-images.jpg\"\r\n        },\r\n          {\r\n            \"firstName\":\"demo2\",\r\n            \"lastName\":\"demo2 lastname\",\r\n            \"email\":\"this@gmail.com\",\r\n            \"address\":\"Indore india\",\r\n             \"image\":\"/1763125712702-images.jpg\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/companey/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"companey",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all companey",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzYzMTE3NzgxLCJleHAiOjE3NjMxMjQ5ODF9.KO1sdERdC9h3Yf2lrvEU-FMcwe7RlYnqFzICfcl-mf4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/companey",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"companey"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get companey details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzYzMTE3NzgxLCJleHAiOjE3NjMxMjQ5ODF9.KO1sdERdC9h3Yf2lrvEU-FMcwe7RlYnqFzICfcl-mf4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/companey/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"companey",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Companey",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzYzMTE3NzgxLCJleHAiOjE3NjMxMjQ5ODF9.KO1sdERdC9h3Yf2lrvEU-FMcwe7RlYnqFzICfcl-mf4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/companey/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"companey",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
